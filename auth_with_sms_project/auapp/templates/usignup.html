@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} 
+Sign Up Page 
+{% endblock %}
+{% block content %}
+<h1> Sign Up </h1>
+	<form method="POST" action="{% url 'usignup' %}">
+	{% csrf_token %}
+		<input type="text" name="un" placeholder="enter username" required><br><br>
+		<input type="tel" name="ph" placeholder="enter telephone" required><br><br>	
+		<input type="text" name="lo" placeholder="enter location" required><br><br>
+		<input type="submit" value="Sign Up"><br><br>
+	</form>
+	{{ msg }}
+{% endblock %}
